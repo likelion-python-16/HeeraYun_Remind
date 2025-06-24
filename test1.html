@@ -6,6 +6,20 @@
     <title>Document</title>
 </head>
 <body>
+    <input type="text" id = usercontent placeholder="여기에 입력해보세요">    <!-- 사용자의 input content를 가져오기 위해서 id 필요.  -->
+    <p id="displayText"></p>
+
+
     <div><a href="index.html">홈으로</a></div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){                            // 1. 초기화 
+        document.getElementById("usercontent").addEventListener("input",function(){      // 2. 텍스트 가져올 곳 찾기.   3. input 이벤트 실행
+            document.getElementById("displayText").textContent=this.value;               // 4. 텍스트 뿌릴 곳 찾기.     5. 대입
+        });
+        
+                                                 //textContent :  HTML 요소의 텍스트(문자) 내용을 가져오거나 설정할 수 있는 JS 속성
+    });
+</script>
 </body>
 </html>
