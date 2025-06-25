@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>이름 입력받기</title>
 </head>
 <body>
+    <input type="text" id="namecontainer" placeholder="이름입력">
+    <button type="submit" id="btn">제출</button>
+    <br>
     <div><a href="index.html">홈으로</a></div>
+
+    <script>
+        // 1. 초기화
+        // 2. 버튼 클릭
+        // 3. 입력 데이터 저장
+        // 4. alert
+        document.addEventListener("DOMContentLoaded",init)
+
+        function init(){
+            const btn=document.getElementById("btn");
+            btn.addEventListener("click",function(){
+                const name = document.getElementById("namecontainer").value;
+                alert("입력한 이름 : "+name)
+            })
+        }
+    
+      
+    </script>
 </body>
 </html>

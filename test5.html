@@ -3,9 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>숫자 증가</title>
 </head>
 <body>
+    <h2>숫자:<span id = "count">0</span></h2>
+    <!-- <span> : 인라인 요소로, 텍스트나 구문을 꾸밀때 시용하는 태그  -->
+    <button type="submit" id="increase">증가</button>
+    
     <div><a href="index.html">홈으로</a></div>
+    
+    <script>
+        // 1. 초기화
+        // 2. increase를 click하면
+        // 3. count가 1씩 증가. 
+
+        document.addEventListener("DOMContentLoaded", function(){
+            const btn = document.getElementById("increase");
+            btn.addEventListener("click",increaseCount)
+        })
+
+        function increaseCount(){
+            const cnt=document.getElementById("count");
+            let num = parseInt(cnt.textContent);
+            // textContent : 속성
+            // ParseInt    : 문자열을 숫자로 바꿔주는 함수
+            // let         : 변수 선언 중 하나 (변할 수 있는 값)
+            cnt.textContent= num +1
+        }
+    </script>
+
 </body>
 </html>

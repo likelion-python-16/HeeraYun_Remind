@@ -3,9 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>색상 변경</title>
 </head>
 <body>
+    <select id ="colorSelect">
+        <option value="white">색상 선택</option>
+        <option value="red">빨강</option>
+        <option value="blue">파랑</option>
+    </select>
+    <div id="colorBox" style="width: 100px; height: 100px; background-color: rgb(78, 78, 78);"></div>
+    <br>
     <div><a href="index.html">홈으로</a></div>
+
+    <script>
+        // 1. 초기화
+        // 2. colorSelect를 change하면 
+        // 3. colorBox의 backgroundColor(속성)가 바뀐다. 
+        document.addEventListener("DOMContentLoaded",function(){
+            const select = document.getElementById("colorSelect");
+            const box = document.getElementById("colorBox");
+
+            select.addEventListener("change",function(){
+                const color=select.value;
+                if (color){
+                    box.style.backgroundColor=color;
+                }
+            })
+            
+        })
+    </script>
 </body>
 </html>
