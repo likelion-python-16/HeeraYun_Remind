@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axios로 데이터 불러오기 </title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>  <!-- axios CDN -->
+</head>
+<body>
+    <a href="index.html">홈으로</a>
+    <h2>axios로 데이터 불러오기</h2>
+    <button id="loadData">데이터 가져오기</button>
+    <pre id="result"></pre>  <!-- 결과를 보여줄 부분이 필요 -->
+
+    <script>
+            // 1. 초기화
+            // 2. 버튼 찾아서 누르면
+            // 3. 데이터 보이기 + console.log
+        document.addEventListener("DOMContentLoaded", () => {
+            const result = document.getElementById("result"); 
+
+            document.getElementById("loadData").addEventListener("click", () => {
+                result.textContent = "불러오는 중...";
+
+                axios.get("https://jsonplaceholder.typicode.com/posts/1")
+                    .then(function(response) {
+                        // result.textContent = response.data;
+                        result.textContent = JSON.stringify(response.data, null, 2);
+
+                    })
+                    .catch(function(error) {
+                        result.textContent = "오류 발생: " + error;
+                    });
+
+                console.log("Axios: 데이터 요청 보냄 (비동기)");
+            });
+        });
+    </script>
+
+</body>
+</html>

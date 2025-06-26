@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 만들기</title>
+</head>
+<body>
+    <a href="index.html">홈으로</a>
+    <h2>카드 만들기</h2>
+    <br>
+    <input type="text" id="cardContent" placeholder="내용을 입력하세요">
+    <button id="btn">카드 추가 </button>
+    <div id="cards"></div>
+
+    <script>
+        // 1. 초기화
+        // 2. 클릭을 누르면 카드 추가 
+
+        document.addEventListener("DOMContentLoaded",()=>{
+            const btn = document.getElementById("btn");
+            const cards =document.getElementById("cards");
+
+            btn.addEventListener("click",()=>{
+                const cardContent=document.getElementById("cardContent");
+                const content =cardContent.value;
+                const p = document.createElement("p");  
+                p.textContent=content;
+                p.style.display = "block";          //줄바꿈
+                cards.appendChild(p);    
+                cardContent.value="";               //입력창 비우기        
+            });
+
+        });
+
+
+    
+    </script>
+</body>
+</html>

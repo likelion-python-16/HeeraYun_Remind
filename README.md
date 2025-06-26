@@ -18,4 +18,10 @@
     ex)let num = parseInt(cnt.textContent);
 
 
-5. // setTimeout : 비동기로 처리되는 메서드 
+5. // setTimeout : 비동기로 처리되는 메서드 , 비동기 타이머
+
+6. axios : axios 라이브러리에서 기본 제공하는 인스턴스
+   axiosInstance : 따로 커스터마이징한 인스턴스 (재사용)
+   
+   response : axios 요청이 성공했을 때 .then()로 들어오는 객체  (axios 응답 전체 객체)
+   error : axios 요펑이 실패했을 때 .catch()로 들어오는 에러 객체 
